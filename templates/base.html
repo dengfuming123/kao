@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+<!--导航部分-->
+<div class="nav">
+    <a class="logo" href="#">
+        <h3>飞飞论坛</h3>
+    </a>
+    <a href="/">首页</a>
+    <img id="p1" src="/static/img/logo.png" />
+</div>
+    {% block content %}{% endblock %}
+</body>
+</html>

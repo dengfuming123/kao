@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+发帖记录
+{% endblock %}
+{% block content %}
+{% if username %}
+<link rel="stylesheet" href="/static/css/login.css">
+<div class="login">
+<li>用户名:{{ username }}</li>
+<li><a href="/user/logout.html">退出登录</a></li>
+{% else %}
+<li><a href="/user/login.html}">登陆</a> </li>
+<li><a href="/user/register.html">注册</a></li>
+{% endif %}
+{% if user_id %}
+<li><a href="/record/{{ user_id }}">你的发帖记录</a></li>
+{% endif %}
+</div>
+{% for record in records %}
+<li><a href="/post/{{ record.id }}">{{ record.title }}</a></li>
+<li>{{ record.user }}</li>
+{% endfor %}
+{% endblock %}
