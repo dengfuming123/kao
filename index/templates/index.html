@@ -25,7 +25,9 @@
 <hr>
 </div>
 <div>
+{% if username %}
 <li><a href="submit.html">发帖</a></li>
+{% endif %}
 {% if superuser %}
 <li><a href="/admin">管理</a></li>
 {% endif %}
