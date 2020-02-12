@@ -18,11 +18,13 @@
 <li><a href="/record/{{ user_id }}">你的发帖记录</a></li>
 {% endif %}
 </div>
+<hr>
 <div class="contexts">
 {% for post in posts %}
 <p><a href="/post/{{ post.id }}">{{ post.title }}</a></p>
 {% endfor %}
 </div>
+<hr>
 <div class="submit">
 {% if username %}
 <li><a href="submit.html">发帖</a></li>

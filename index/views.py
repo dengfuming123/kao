@@ -24,6 +24,7 @@ def showpost(request,id):
     commit_user = request.user.id
     commit_pic = request.FILES.get('pic')
     username = request.user.username
+    user_id = commit_user
     commits = Commit.objects.filter(post_id=id)
     if request.method == 'POST':
         if commit_body and commit_post and commit_user and commit_pic:

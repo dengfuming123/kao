@@ -3,10 +3,8 @@
              padding: 0;
          }
          div.nav{
-             border-bottom: 1px solid #ccc;
              float:left;
              width:70%;
-
          }
          div.nav a{
              text-decoration: none;
@@ -24,5 +22,6 @@
              padding-left:500px;
              width:40px;
              height:30px;
+             padding-top:10px;
 
          }

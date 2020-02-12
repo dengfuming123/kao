@@ -2,7 +2,6 @@ div.login{
   float:left;
   width: 30%;
   margin-bottom:54px;
-  border-bottom: 1px solid #ccc;
   height:75px;
          }
 div.login a{
@@ -60,11 +59,11 @@ text-align: center;
 div.contexts{
  font-family: "Microsoft soft";
  padding-bottom:20px;
- border-bottom: 1px solid #ccc;
 }
 div.contexts a{
  text-decoration: none;
  color: LightSalmon;
+  border-bottom: 1px solid LightSalmon;
 }
 div.contexts a:hover{
 color:#1E90FF;
@@ -94,6 +93,5 @@ div.comment_area{
 margin-top: 2em;
 }
 h3.comment_area_title{
-border-bottom: 1px solid #ccc;
 padding-bottom: 0.4em;
 }
