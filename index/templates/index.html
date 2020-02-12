@@ -22,13 +22,12 @@
 {% for post in posts %}
 <p><a href="/post/{{ post.id }}">{{ post.title }}</a></p>
 {% endfor %}
-<hr>
 </div>
-<div>
+<div class="submit">
 {% if username %}
 <li><a href="submit.html">发帖</a></li>
 {% endif %}
-{% if superuser %}
+{% if is_superuser %}
 <li><a href="/admin">管理</a></li>
 {% endif %}
 </div>

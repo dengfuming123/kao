@@ -10,18 +10,44 @@
 <li>用户名:{{ username }}</li>
 <li><a href="/user/logout.html">退出登录</a></li>
 {% else %}
-<li><a href="/user/login.html}">登陆</a> </li>
+<li><a href="/user/login.html">登陆</a></li>
 <li><a href="/user/register.html">注册</a></li>
 {% endif %}
-{% if user_id %}
+{% if username %}
 <li><a href="/record/{{ user_id }}">你的发帖记录</a></li>
 {% endif %}
 </div>
 <div class="text_area">
-<h1 id="text_title">标题：{{ post.title }}</h1>
+<h1 id="text_title">{{ post.title }}</h1>
 <hr>
-<textarea id="text_area">{{ post.body }}</textarea>
+<textarea id="text_area" readonly>{{ post.body }}</textarea>
 <li id="src"><img src="{{ post.goods_pic.url }}" width="400" height="350" /></li>
+</div>
+<div class="comment_area">
+    <h3 class="comment_area_title">提交评论</h3>
+    {% if user.is_authenticated %}
+    已登陆
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <span>{{ username }}</span>
+        <input type="text" name="commit">
+        <span>图片：</span><input type="file" name="pic">
+        <br>
+        <button type="submit" class="btn btn-primary btn-block">评论</button>
+    </form>
+    {% if tips %}
+    <div>{{ tips }}</div>
+    {% endif %}
+    {% else %}
+    未登录
+    {% endif %}
+</div>
+<div class="comment_area">
+    <h3 class="comment_area_title">评论列表</h3>
+    {% for commit in commits %}
+    <p>{{commit.user}}: {{ commit.body }}</p>
+    <li ><img src="{{ commit.goods_pic.url }}" width="400" height="350" /></li>
+    {% endfor %}
 </div>
 <div class="footer">
 <hr>

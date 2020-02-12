@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request
-from .models import Post
+from .models import Post, Commit
 from index import  models
 from datetime import datetime
 # Create your views here.
@@ -17,13 +17,24 @@ def index(request):
   return render(request, 'index.html', locals())
 
 def showpost(request,id):
-    try:
-        post = Post.objects.get(id=id)
-        username = request.user.username
-        if post != None:
+    # try:
+    post = Post.objects.get(id=id)
+    commit_body = request.POST.get('commit')
+    commit_post = post.id
+    commit_user = request.user.id
+    commit_pic = request.FILES.get('pic')
+    username = request.user.username
+    commits = Commit.objects.filter(post_id=id)
+    if request.method == 'POST':
+        if commit_body and commit_post and commit_user and commit_pic:
+            Commit.objects.create(user_id=commit_user, body=commit_body, post_id=commit_post, goods_pic=commit_pic)
             return render(request, 'post.html', locals())
-    except:
-        return redirect('/')
+        elif commit_body and commit_post and commit_user:
+            Commit.objects.create(user_id=commit_user, body=commit_body, post_id=commit_post)
+            return render(request, 'post.html', locals())
+        else:
+            tips = '回复失败'
+    return render(request, 'post.html', locals())
 def writepost(request):
     user_id = request.user.id
     username = request.user.username

@@ -17,8 +17,10 @@
 <li><a href="/record/{{ user_id }}">你的发帖记录</a></li>
 {% endif %}
 </div>
+<div class="contexts">
 {% for record in records %}
-<li><a href="/post/{{ record.id }}">{{ record.title }}</a></li>
-<li>{{ record.user }}</li>
+<p><a href="/post/{{ record.id }}">{{ record.title }}</a></p>
+<p>{{ record.user }}</p>
 {% endfor %}
+</div>
 {% endblock %}

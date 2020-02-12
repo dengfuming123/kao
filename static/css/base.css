@@ -11,6 +11,10 @@
          div.nav a{
              text-decoration: none;
              color: gray;
+             font-size: 22px;
+         }
+         div.nav a:hover{
+             color: black;
          }
          div.nav a.logo{
              display: inline-block;
