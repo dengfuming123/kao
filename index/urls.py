@@ -6,4 +6,5 @@ urlpatterns = [
  path('post/<id>/', showpost),
  path('submit.html', writepost),
  path('record/<user_id>/', recordpost),
+ path('accounts/', include('allauth.urls')),
 ]

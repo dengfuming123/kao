@@ -8,7 +8,7 @@ def loginView(request):
     title = '登录'
     unit_2 = '/user/register.html'
     unit_2_name = '立即注册'
-    unit_1 = '/user/findPassword.html'
+    unit_1 = '/user/FindPassword.html'
     unit_1_name = '修改密码'
     if request.method == 'POST':
         username = request.POST.get('username', '')
@@ -31,7 +31,7 @@ def registerView(request):
     title = '注册'
     unit_2 = '/user/login.html'
     unit_2_name = '立即登录'
-    unit_1 = '/user/findPassword.html'
+    unit_1 = '/user/FindPassword.html'
     unit_1_name = '修改密码'
     if request.method == 'POST':
         username = request.POST.get('username', '')
@@ -60,29 +60,30 @@ def findPassword(request):
         if not user:
             tips = '用户' + username + '不存在'
         else:
-            # 判断验证码是否已发送
-            if not request.session.get('VerificationCode', ''):
-                # 发送验证码并将验证码写入session
-                button = '重置密码'
-                tips = '验证码已发送'
-                new_password = True
-                VerificationCode = str(random.randint(1000, 9999))
-                request.session['VerificationCode'] = VerificationCode
-                user[0].email_user('找回密码', VerificationCode)
-            # 匹配输入的验证码是否正确
-            elif VerificationCode == request.session.get('VerificationCode'):
-                # 密码加密处理并保存到数据库
-                dj_ps = make_password(password, None, 'pbkdf2_sha256')
-                user[0].password = dj_ps
-                user[0].save()
-                del request.session['VerificationCode']
-                tips = '密码已重置'
+            for u in user:
+                # 判断验证码是否已发送
+                if not request.session.get('VerificationCode', ''):
+                    # 发送验证码并将验证码写入session
+                    button = '重置密码'
+                    tips = '验证码已发送'
+                    new_password = True
+                    VerificationCode = str(random.randint(1000, 9999))
+                    request.session['VerificationCode'] = VerificationCode
+                    u.email_user('找回密码', VerificationCode)
+                # 匹配输入的验证码是否正确
+                elif VerificationCode == request.session.get('VerificationCode'):
+                    # 密码加密处理并保存到数据库
+                    dj_ps = make_password(password, None, 'pbkdf2_sha256')
+                    u.password = dj_ps
+                    u.save()
+                    del request.session['VerificationCode']
+                    tips = '密码已重置'
             # 输入验证码错误
-            else:
-                tips = '验证码错误，请重新获取'
-                new_password = False
-                del request.session['VerificationCode']
-    return render(request, 'findPassword.html', locals())
+                else:
+                    tips = '验证码错误，请重新获取'
+                    new_password = False
+                    del request.session['VerificationCode']
+    return render(request, 'FindPassword.html', locals())
 # 用户注销，退出登录
 def logoutView(request):
     logout(request)
