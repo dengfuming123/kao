@@ -95,3 +95,27 @@ margin-top: 2em;
 h3.comment_area_title{
 padding-bottom: 0.4em;
 }
+div.index{
+position: absolute;
+top: 50%;
+left: 50%;
+font-size:200%;
+}
+div.index a{
+color: LightSalmon;
+text-decoration: none;
+}
+div.index a:hover{
+color:#1E90FF;
+}
+div.page{
+float:right;
+padding-right:50px;
+
+}
+div.page a{
+text-decoration: none;
+}
+#countpage{
+padding-right:20px;
+}

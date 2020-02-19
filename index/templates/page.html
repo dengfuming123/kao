@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="/static/css/login.css">
+<script type="text/javascript" src="/static/javascript/time.js"></script>
+<div class="login">
+{% if username %}
+<li>用户名:{{ username }}</li>
+<li><a href="{% url 'logout' %}">退出登录</a></li>
+{% else %}
+<li><a href="{% url 'login' %}">登陆</a> </li>
+<li><a href="{% url 'register' %}">注册</a></li>
+{% endif %}
+{% if user_id %}
+<li><a href="/record/{{ user_id }}">发帖记录</a></li>
+{% endif %}
+</div>
+<hr>
+<div class="contexts">
+{% for post in posts %}
+<p><a href="/post/{{ post.id }}">{{ post.title }}</a></p>
+{% endfor %}
+</div>
+<hr>
+<div class="page">
+
+<p>
+    <a id="countpage">总页数:{{ numberpage }}</a>
+    {% for i in list_num %}
+    <a href="/page/{{ i }}">{{ i }}</a>
+    {% endfor %}
+</p>
+</div>
+<div class="submit">
+    <a>  第{{ n }}页</a>
+{% if username %}
+<li><a href="submit.html">发帖</a></li>
+{% endif %}
+{% if is_superuser %}
+<li><a href="/admin">管理</a></li>
+{% endif %}
+<div id="times">
+</div>
+</div>
+{% endblock %}
