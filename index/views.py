@@ -5,6 +5,7 @@ from   django.db.models    import   Q
 from django.db.models import Count
 from index import  models
 from datetime import datetime
+import math
 # Create your views here.
 def index(request):
   # # 获取当前请求的用户名
@@ -22,9 +23,11 @@ def index(request):
 def pagechange(request, n):
     username = request.user.username
     max = int(n) #转化为 int类型
-    posts = Post.objects.filter(Q(id__lte=max*10) & Q(id__gte=(max-1)*10+1))
-    post_count = Post.objects.aggregate(Count('id'))
-    numberpage = 1+post_count['id__count']//10
+    posts = Post.objects.all()[10*(max-1):10*max]   #每一页是哪几条
+    #posts = Post.objects.filter(Q(id__lte=max*2) & Q(id__gte=(max-1)*2+1))#出现在这一页的文章范围
+    # op_posts = list(reversed(posts))
+    post_count = Post.objects.aggregate(Count('id'))  #计算一共有多少篇文章
+    numberpage = math.ceil(post_count['id__count']/10) #计算有多少页
     countpage = numberpage+1
     list_num = []
     now = datetime.now
