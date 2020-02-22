@@ -6,6 +6,7 @@
 {% block content %}
 {% if username %}
 <link rel="stylesheet" href="/static/css/login.css">
+<script type="text/javascript" src="/static/javascript/tips.js"></script>
 <div class="login">
 <li>用户名:{{ username }}</li>
 <li><a href="/user/logout.html">退出登录</a></li>
@@ -19,14 +20,24 @@
 </div>
 <form class="form" action="" method="post" enctype="multipart/form-data">
      {% csrf_token %}
-      <div class="title"><input type="title" placeholder="写下你的文章标题" id="title" name="title"></div>
-      <div class="slug"><input type="slug" placeholder="写个标签吧" id="slug" name="slug"></div>
-      <div class="context"><textarea id="context" name="body"></textarea></div>
-      <span>图片：</span><input type="file" name="pic">
+      <div class="title">标题
       <br>
-      <button type="submit" class="btn btn-primary btn-block">确定</button>
-      {% if tips %}
-      <div>{{ tips }}</div>
-      {% endif %}
+      <input type="title" placeholder="写下你的文章标题" id="title" name="title"></div>
+      <div class="slug">简介
+          <br>
+          <textarea  placeholder="写个标签吧" id="slug" name="slug"></textarea></div>
+      <div class="context">正文
+          <br>
+          <textarea id="context" name="body"></textarea></div>
+      <div class="tupian"><input type="file" name="pic"></div>
+      <div class="tijiao">
+      <button type="submit" class="btn btn-primary btn-block" id="tijiao" >提交</button>
+      </div>
+
 </form>
+      {% if tips %}
+       <div class="submittips" id="tips">
+       <img id="ban" src="/static/img/ban.png" />
+       {{ tips }}</div>
+      {% endif %}
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-{{ title }}
+ flybird论坛
 {% endblock %}
 {% block content %}
 
@@ -18,8 +18,11 @@
 <li><a href="/record/{{ user_id }}">发帖记录</a></li>
 {% endif %}
 </div>
-<hr>
+<br>
+<div class="all">
+<div class="body">
 <div class="contexts">
+<hr>
 {% for post in posts %}
 <p><a href="/post/{{ post.id }}">{{ post.title }}</a></p>
 {% endfor %}
@@ -43,6 +46,8 @@
 <li><a href="/admin">管理</a></li>
 {% endif %}
 <div id="times">
+</div>
+</div>
 </div>
 </div>
 {% endblock %}

@@ -18,9 +18,10 @@
 {% endif %}
 </div>
 <div class="contexts">
+<hr>
 {% for record in records %}
 <p><a href="/post/{{ record.id }}">{{ record.title }}</a></p>
-<p>{{ record.user }}</p>
+    <p id="data">{{ record.pub_date }}</p>
 {% endfor %}
 </div>
 {% endblock %}

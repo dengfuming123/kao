@@ -1,3 +1,11 @@
+div.all{
+ background-color:#F5F5F5;
+}
+div.body{
+margin:2cm ;
+margin-right:5cm;
+
+}
 div.login{
   float:left;
   width: 30%;
@@ -18,44 +26,70 @@ div.login li{
          }
 div.context{
  text-decoration: none;
- text-align: center;
+margin-left:2cm;
          }
  #title{
  outline-style: none ;
  border: 1px solid #ccc;
  width: 620px;
- padding: 12px 12px;
- font-size: 25px;
+ padding: 8px 8px;
+ font-size: 20px;
  border-radius: 3px;
  font-family: "Microsoft soft";
-  box-shadow: inset 0 1px 1px;
+
  }
 div.title{
-text-align: center;
+margin-left:2cm;
 }
  #slug{
  outline-style: none ;
  border: 1px solid #ccc;
- width: 500px;
- padding: 12px 12px;
- font-size: 25px;
+ width: 620px;
+ padding: 8px 8px;
+ height: 100px;
+ font-size: 20px;
  border-radius: 3px;
  font-family: "Microsoft soft";
-  box-shadow: inset 0 1px 1px;
+ box-shadow: inset 0 1px 1px;
  }
 div.slug{
-text-align: center;
+margin-left:2cm;
+
+
 }
  #context{
  border: 1px solid #ccc;
- width: 600px;
- padding: 12px 12px;
+ width: 620px;
+ padding: 8px 8px;
  height: 500px;
  border-radius: 3px;
  font-family: "Microsoft soft";
   box-shadow: inset 0 1px 1px;
-
+  font-size: 20px;
  }
+div.tupian{
+
+width:300px;
+display:inline-block;
+margin-left:2cm;
+}
+div.tijiao{
+display:inline-block;
+margin-top:0;
+margin-left:20px;
+
+}
+#tijiao{
+width:200%;
+height: 200%;
+font-family: "Microsoft soft";
+background-color: #FF0033;
+color: white;
+font-size: 25px;
+}
+#tijiao:hover{
+background-color: red;
+}
 div.contexts{
  font-family: "Microsoft soft";
  padding-bottom:20px;
@@ -64,6 +98,10 @@ div.contexts a{
  text-decoration: none;
  color: LightSalmon;
   border-bottom: 1px solid LightSalmon;
+  margin-left:2cm;
+}
+#data{
+ margin-left:2cm;
 }
 div.contexts a:hover{
 color:#1E90FF;
@@ -79,22 +117,8 @@ div.submit a{
 div.submit a:hover{
  color: black;
 }
-div.text_area{
-text-align:center;
-}
-#text_area{
-width: 800px;
-height: 200px;
-}
-#src{
-list-style-type:none;
-}
-div.comment_area{
-margin-top: 2em;
-}
-h3.comment_area_title{
-padding-bottom: 0.4em;
-}
+
+
 div.index{
 position: absolute;
 top: 50%;
@@ -118,4 +142,16 @@ text-decoration: none;
 }
 #countpage{
 padding-right:20px;
+}
+div.submittips{
+position:fixed;
+left: 50%;
+top: 50%;
+padding:8px 20px 8px 20px;
+border-radius:10px;
+box-shadow: 0 0 5px gray;
+}
+#ban{
+height: 15px;
+vertical-align: middle;
 }
