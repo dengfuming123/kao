@@ -1,16 +1,42 @@
 div.all{
  background-color:#F5F5F5;
-}
-div.body{
-margin:2cm ;
-margin-right:5cm;
 
+}
+hr.hr0{
+width:100%;
+padding-left:50px;
+padding-right:200px;
+}
+div.navs{
+background-color:white;
+ list-style:none;
+
+}
+div.navs li{
+font-size:25px;
+ font-family: "Microsoft soft";
+ margin-left:2cm;
+ font-weight:100;
+  display: inline-block;
+
+}
+div.navs a{
+ text-decoration:none;
+}
+div.navs a:hover{
+ color: black;
+}
+
+div.body{
+position:relative;
+width:1100px;
 }
 div.login{
   float:left;
   width: 30%;
   margin-bottom:54px;
   height:75px;
+
          }
 div.login a{
 text-decoration: none;
@@ -100,6 +126,11 @@ div.contexts a{
   border-bottom: 1px solid LightSalmon;
   margin-left:2cm;
 }
+div.post span{
+position:absolute;
+left:70%;
+}
+
 #data{
  margin-left:2cm;
 }

@@ -1,6 +1,7 @@
          .*{
              margin: 0;
              padding: 0;
+
          }
          div.nav{
              float:left;
@@ -27,4 +28,5 @@
          }
          #xian{
          width:143%;
+
          }

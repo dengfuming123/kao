@@ -3,12 +3,20 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=200)
+    Article_category = (
+     ('KJ', '科技'),
+     ('YX', '游戏'),
+     ('YS', '影视'),
+     ('QT', '其它'),
+    )
+    title = models.CharField(max_length=50)
     slug = models.CharField(max_length=200)
     body = models.TextField()
     pub_date = models.DateTimeField(default=timezone.now)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     goods_pic = models.ImageField(upload_to='article_pic/', default='upming/logo.png')
+    category = models.CharField(max_length=20, choices=Article_category, default='QT')
+    comment_number = models.IntegerField(default=0)
     class Meta:
         ordering = ('-pub_date', )
 
