@@ -3,9 +3,7 @@ div.all{
 
 }
 hr.hr0{
-width:100%;
-padding-left:50px;
-padding-right:200px;
+
 }
 div.navs{
 background-color:white;
@@ -28,8 +26,7 @@ div.navs a:hover{
 }
 
 div.body{
-position:relative;
-width:1100px;
+
 }
 div.login{
   float:left;

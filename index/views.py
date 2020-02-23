@@ -28,7 +28,6 @@ def pagechange(request, n):
         comment = Commit.objects.filter(post_id=co.id).aggregate(Count('id')) #计算评论数量
 
         Post.objects.filter(id=co.id).update(comment_number=comment['id__count'])
-        print(comment)
     posts = Post.objects.filter(Q(id__lte=max*10) & Q(id__gte=(max-1)*10+1))#出现在这一页的文章范围
     op_posts = list(reversed(posts))
     post_count = Post.objects.aggregate(Count('id'))  #计算一共有多少篇文章
