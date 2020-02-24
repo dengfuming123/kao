@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, request
-from .models import Post, Commit
-from   django.db.models    import   Q
+from .models import Post, Commit, User
+from django.db.models import Q
+from .forms import SelectCategory
 from django.db.models import Count
 from index import  models
 from datetime import datetime
@@ -22,14 +23,11 @@ def index(request):
   return render(request, 'index.html', locals())
 def pagechange(request, n):
     username = request.user.username
-    max = int(n) #转化为 int类型
-    posts = Post.objects.all()[10*(max-1):10*max]   #每一页是哪几条
-    for co in posts:
+    maxs = int(n) #转化为 int类型
+    posts_a = Post.objects.all()[10*(maxs-1):10*maxs]   #每一页是哪几条
+    for co in posts_a:
         comment = Commit.objects.filter(post_id=co.id).aggregate(Count('id')) #计算评论数量
-
         Post.objects.filter(id=co.id).update(comment_number=comment['id__count'])
-    posts = Post.objects.filter(Q(id__lte=max*10) & Q(id__gte=(max-1)*10+1))#出现在这一页的文章范围
-    op_posts = list(reversed(posts))
     post_count = Post.objects.aggregate(Count('id'))  #计算一共有多少篇文章
     numberpage = math.ceil(post_count['id__count']/10) #计算有多少页
     countpage = numberpage+1
@@ -70,12 +68,14 @@ def writepost(request):
     slug = request.POST.get('slug')
     body = request.POST.get('body')
     pic = request.FILES.get('pic')
+    select_form = SelectCategory()
+    get_value = request.POST.get('sel_value', '')
     if request.method == 'POST':
-        if title and slug and body and pic:
-            Post.objects.create(title=title, slug=slug, body=body, user_id=user_id, goods_pic=pic)
+        if title and slug and body and pic and get_value:
+            Post.objects.create(title=title, slug=slug, body=body, user_id=user_id, goods_pic=pic, category=get_value)
             return redirect('/')
-        elif title and slug and body:
-            Post.objects.create(title=title, slug=slug, body=body, user_id=user_id)
+        elif title and slug and body and get_value:
+            Post.objects.create(title=title, slug=slug, body=body, user_id=user_id, category=get_value)
             return redirect('/')
         else:
             tips = '发帖失败'

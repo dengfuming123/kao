@@ -64,6 +64,14 @@ margin-left:2cm;
 div.title{
 margin-left:2cm;
 }
+div.category{
+margin-left:2cm;
+margin-bottom:20px;
+margin-top:20px;
+}
+#category{
+padding: 8px 200px 8px 0px;
+}
  #slug{
  outline-style: none ;
  border: 1px solid #ccc;
@@ -77,7 +85,8 @@ margin-left:2cm;
  }
 div.slug{
 margin-left:2cm;
-
+margin-bottom:20px;
+margin-top:20px;
 
 }
  #context{
@@ -119,15 +128,25 @@ div.contexts{
 }
 div.contexts a{
  text-decoration: none;
- color: LightSalmon;
-  border-bottom: 1px solid LightSalmon;
+ color: black;
   margin-left:2cm;
 }
-div.post span{
+div.post{
+}
+div.post span a2{
 position:absolute;
 left:70%;
+color: LightSalmon;
 }
-
+div.post a1{
+margin-left:2cm;
+color:gray;
+}
+div.post span a3{
+position:absolute;
+left:70%;
+color: black;
+}
 #data{
  margin-left:2cm;
 }

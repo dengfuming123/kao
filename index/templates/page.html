@@ -21,20 +21,23 @@
 <div class="navs">
 <hr>
     <li><a href="../../page/1/">首页</a></li>
-    <li><a href="#">科技</a></li>
-    <li><a href="#">游戏</a></li>
-    <li><a href="#">影视</a></li>
-    <li><a href="#">其它</a></li>
+    <li><a href="../../technology/1/">科技</a></li>
+    <li><a href="../../game/1/">游戏</a></li>
+    <li><a href="../../movie/1/">影视</a></li>
+    <li><a href="../../qt/1/">其它</a></li>
 </div>
 <div class="all">
 <hr>
 <div class="body">
 <div class="contexts">
-{% for post in posts %}
+{% for post in posts_a %}
 <div class="post">
 <p><a href="/post/{{ post.id }}">{{ post.title }}</a>
-<span >{{ post.comment_number }}</span>
+    <span><a2>{{ post.comment_number }}</a2></span>
 </p>
+    <p><a1>UP: {{post.user.username}}</a1>
+        <span><a3>来自: {{ post.category }}</a3></span>
+    </p>
 </div>
 {% endfor %}
 </div>

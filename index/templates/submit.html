@@ -23,6 +23,14 @@
       <div class="title">标题
       <br>
       <input type="title" placeholder="写下你的文章标题" id="title" name="title"></div>
+      <div class="category">分区
+      <br>
+          <select name="sel_value" id="category">
+       {% for key,value in select_form.Article_category %}
+        <option value="{{ value }}">{{ key }}</option>
+       {% endfor %}
+      </select>
+      </div>
       <div class="slug">简介
           <br>
           <textarea  placeholder="写个标签吧" id="slug" name="slug"></textarea></div>
@@ -33,7 +41,6 @@
       <div class="tijiao">
       <button type="submit" class="btn btn-primary btn-block" id="tijiao" >提交</button>
       </div>
-
 </form>
       {% if tips %}
        <div class="submittips" id="tips">

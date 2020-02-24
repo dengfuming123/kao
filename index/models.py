@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Post(models.Model):
     Article_category = (
-     ('KJ', '科技'),
-     ('YX', '游戏'),
-     ('YS', '影视'),
-     ('QT', '其它'),
+     ('科技', '科技'),
+     ('游戏', '游戏'),
+     ('影视', '影视'),
+     ('其它', '其它'),
     )
     title = models.CharField(max_length=50)
     slug = models.CharField(max_length=200)

@@ -8,4 +8,8 @@ urlpatterns = [
  path('submit.html', writepost),
  path('record/<user_id>/', recordpost),
  path('accounts/', include('allauth.urls')),
+ path('technology/', include('technology.urls')),
+ path('game/', include('game.urls')),
+ path('movie/', include('movie.urls')),
+ path('qt/', include('QT.urls')),
 ]
