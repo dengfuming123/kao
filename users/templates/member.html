@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+个人用户中心
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/member.css">
+<div class="login">
+<!--     通过外键找到USER -->
+    {% if user.user.username %}
+<li><a href="/user/logout.html">退出登录</a></li>
+{% else %}
+<li><a href="/user/login.html">登陆</a></li>
+<li><a href="/user/register.html">注册</a></li>
+{% endif %}
+{% if user.user.username %}
+<li><a href="/record/{{ user.user_id }}">发帖记录</a></li>
+{% endif %}
+</div>
+<div class="body">
+<div class="block-main">
+    <div class="area-main-left">
+            <img src="{{ user.head_pic.url }}"id="avatar">
+            <div class="guid-left">
+                <p>{{ user.user.username }}</p>
+                <p id="p-record"><a href="/record/{{ user.user_id }}">发帖记录</a></p>
+            </div>
+    </div>
+    <div class="area-main-right">
+<form class="form" action="" method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+    <div id="block-first">
+        <div class="banner">个人信息</div>
+        <div id="profile">
+            <div class="unit">
+                <div class="a">手机</div>
+                <div class="b"><input id="telephone" placeholder="请输入手机号" name="phone"></div>
+                <br>
+            </div>
+
+            <div class="unit">
+                <div class="a">修改头像</div>
+                <div class="b"><input type="file" name="pic"></div>
+            </div>
+        </div>
+    </div>
+      <button type="submit" class="btn btn-primary btn-block" id="tijiao" >提交</button>
+    {% if tips %}
+    {{ tips }}
+    {% endif %}
+</form>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -15,6 +15,7 @@ class UserProfile(models.Model):
         'Telephone', max_length=50, blank=True)
 
     mod_date = models.DateTimeField('Last modified', auto_now=True)
+    head_pic = models.ImageField(upload_to='head', default='head/head_pic.jpg')
 
     class Meta:
         verbose_name = 'User Profile'

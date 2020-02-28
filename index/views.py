@@ -6,6 +6,7 @@ from .forms import SelectCategory
 from django.db.models import Count
 from index import  models
 from datetime import datetime
+from users.models import UserProfile  #扩展后的User
 import math
 # Create your views here.
 def index(request):
@@ -20,6 +21,14 @@ def index(request):
   #     superuser = 1
   # else:
   #     superuser = None
+  user = request.user
+  if user.id:
+      try:
+        user_profile = UserProfile.objects.get(user_id=user.id)
+      except:
+          UserProfile.objects.create(user_id=user.id)         #如果没有对User进行 扩展  创建
+  else:
+      pass
   return render(request, 'index.html', locals())
 def pagechange(request, n):
     username = request.user.username
@@ -33,8 +42,10 @@ def pagechange(request, n):
     countpage = numberpage+1
     list_num = []
     now = datetime.now
-    user_id = request.user.id
-    if username == 'qq792074582':
+    if request.user.id:
+       user_id = request.user.id
+       user_profile = UserProfile.objects.get(user_id=user_id)  #扩展后的user 需要用到其头像
+    if username == '792074582':
         superuser = 1
     else:
         superuser = None
@@ -50,6 +61,9 @@ def showpost(request,id):
     commit_pic = request.FILES.get('pic')
     username = request.user.username
     user_id = commit_user
+    if request.user.id:
+        user_id = request.user.id
+        user_profile = UserProfile.objects.get(user_id=user_id)  # 扩展后的user 需要用到其头像
     commits = Commit.objects.filter(post_id=id)
     if request.method == 'POST':
         if commit_body and commit_post and commit_user and commit_pic:
@@ -63,6 +77,9 @@ def showpost(request,id):
     return render(request, 'post.html', locals())
 def writepost(request):
     user_id = request.user.id
+    if user_id:
+        user_id = request.user.id
+        user_profile = UserProfile.objects.get(user_id=user_id)  # 扩展后的user 需要用到其头像
     username = request.user.username
     title = request.POST.get('title')
     slug = request.POST.get('slug')
@@ -82,6 +99,8 @@ def writepost(request):
     return render(request, 'submit.html', locals())
 
 def recordpost(request, user_id):
+    user_id = request.user.id
+    user_profile = UserProfile.objects.get(user_id=user_id)  # 扩展后的user 需要用到其头像
     records = Post.objects.filter(user=user_id)  #get只能查询一个，filter可以查询多个
     username = request.user.username
     #print(user_id)

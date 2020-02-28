@@ -28,25 +28,8 @@ div.navs a:hover{
 div.body{
 
 }
-div.login{
-  float:left;
-  width: 30%;
-  margin-bottom:54px;
-  height:75px;
 
-         }
-div.login a{
-text-decoration: none;
-color: gray;
-margin-left:10px;
-         }
-div.login li{
- display: inline-block;
- color: gray;
- text-decoration: none;
- margin-left:10px;
- padding-top:25px;
-         }
+
 div.context{
  text-decoration: none;
 margin-left:2cm;

@@ -8,6 +8,14 @@
              width:70%;
 
          }
+         div.nav li{
+        font-size:25px;
+       font-family: "Microsoft soft";
+        margin-left:2cm;
+        font-weight:100;
+        display: inline-block;
+
+}
          div.nav a{
              text-decoration: none;
 
@@ -19,14 +27,69 @@
          div.nav a.logo{
              display: inline-block;
              font-size: 120%
+
          }
          #p1{
              height:30px;
-             vertical-align: middle;
-             padding-left:300px;
-
+             position: relative;
+             top: 5%;
+             left:50%;
          }
          #xian{
          width:143%;
 
          }
+         #xuanfu{
+position:absolute;
+right:30%;
+}
+#right{
+margin-left:50px;
+}
+#head{
+width: 20px;
+height: 20px;
+}
+#appear{
+position: absolute;
+width: 180px;
+height:180px;
+border: 1px solid #ccc;
+text-align: left;
+
+}
+#username{
+position: absolute;
+margin-top:10px;
+margin-left: 0;
+
+}
+#logout{
+position: absolute;
+margin-top:40px;
+margin-left:0;
+
+}
+
+div.login{
+  float:left;
+  margin-bottom:54px;
+  height:75px;
+  width: 30%;
+  vertical-align:middle;
+         }
+div.login a{
+text-decoration: none;
+margin-left:10px;
+color: gray;
+         }
+div.login li{
+ display: inline-block;
+ text-decoration: none;
+ padding-top:25px;
+ padding-left:10px;
+         }
+div.login :hover
+{
+color:black
+}

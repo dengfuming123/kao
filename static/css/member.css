@@ -1,0 +1,98 @@
+
+div.body{
+clear: both;
+width: 100%;
+text-align: center;
+inline-height:16px;
+
+}
+div.block-main{
+display: block;
+background-color: #f5f7fa;
+border: 1px solid #ddd;
+box-shadow: none;
+
+}
+div.area-main-left{
+float: left;
+line-height: 16px;
+border-right: 1px solid #ddd;
+background-color: #f9f9f9;
+width: 245px;
+padding: 24px;
+}
+div.area-main-right{
+float: left;
+line-height: 16px;
+border-right: 1px solid #ddd;
+background-color: #f9f9f9;
+width: 735px;
+padding: 24px;
+}
+div.guid-left{
+text-align: center;
+
+}
+#p-record{
+font-size:20px;
+
+}
+#p-record a{
+font-size:20px;
+text-decoration: none;
+color:#999;
+}
+
+#p-record:before{
+content:"\272A";
+color:#3a9bd9;
+left:-10px;
+ position: relative;
+}
+
+#avatar{
+position: relative;
+width: 112px;
+height: 112px;
+border-radius: 56px;
+border: none;
+margin: 0 auto ;
+text-align: center;
+}
+.banner{
+    position: relative;
+    width: auto;
+    height: 36px;
+    color: #666;
+    text-align: left;
+    line-height: 34px;
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+div.unit{
+margin: 25px 16px;
+display: block;
+
+}
+div.a{
+float: left;
+text-align: right;
+line-height: 22px;
+    width: 100px;
+font-style: inherit;
+margin: 0 auto;
+
+height:22px;
+padding-top:2px;
+}
+div.b{
+float:left;
+padding-left:16px;
+text-align: left;
+font-style: inherit;
+margin: 0 auto;
+
+line-height: 22px;
+height:22px;
+}

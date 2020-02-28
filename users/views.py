@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
+from .models import UserProfile
+from index.models import Commit
 import random
 from django.contrib.auth.hashers import make_password
 def loginView(request):
@@ -43,6 +45,8 @@ def registerView(request):
             tips = '此邮箱不可用'
         else:
             user = User.objects.create_user(username=username, password=password, email=email)
+            # user_profile = UserProfile(user=user)
+            # user_profile.save()
             user.save()
             tips = '注册成功，请登录'
     return render(request, 'Register.html', locals())
@@ -88,3 +92,21 @@ def findPassword(request):
 def logoutView(request):
     logout(request)
     return redirect('/')
+def memberView(request, n):
+    user = UserProfile.objects.get(user_id=n)
+    phone = request.POST.get('phone')
+    pic = request.FILES.get('pic')
+    if request.method == 'POST':
+        tips = '更改成功'
+        if phone:
+            UserProfile.objects.filter(user_id=n).update(telephone=phone)
+        elif pic:
+            user.head_pic = pic #直接改图片无法加载Upload下路径
+            user.save()
+        elif pic and phone:
+            UserProfile.objects.filter(user_id=n).update(telephone=phone)
+            user.head_pic = pic #直接改图片无法加载Upload下路径
+            user.save()
+        else:
+            tips = '并未更改'
+    return render(request, 'member.html', locals())

@@ -4,6 +4,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=0.5">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/css/base.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+<!--jquery 百度CND地址调用-->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#xuanfu").mouseover(function(){
+          $("#appear").show();
+          $("#xuanfu").mouseout(function(){
+          $("#appear").hide();
+          });
+        });
+      })
+    </script>
 </head>
 <body >
 <!--导航部分-->
