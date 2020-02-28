@@ -4,6 +4,7 @@ from django.db.models import Count
 from index.models import Post, Commit
 import math
 from datetime import datetime
+from users.models import UserProfile  #扩展后的User
 def pagetegy(request, n):
     username = request.user.username
     page = int(n)
@@ -21,6 +22,7 @@ def pagetegy(request, n):
     list_num = []
     now = datetime.now
     user_id = request.user.id
+    user_profile = UserProfile.objects.get(user_id=user_id)  # 扩展后的user 需要用到其头像
     if username == 'qq792074582':
         superuser = 1
     else:
