@@ -11,8 +11,9 @@
 <li><a href="/user/member/{{ user_id }}"><img src="{{user_profile.head_pic.url}}" id="head"></a>
 </li>
     <div id="appear" hidden>
-    <div id="username"><p><a href="/user/member/{{ user_id }}">用户名:{{ username }}</a></p></div>
-    <div id="logout"><p><a href="{% url 'logout' %}">退出登录</a></p></div>
+     <div id="username"><p><a href="/user/member/{{ user_id }}">用户名:{{ username }}</a></p></div>
+     <div id="logout"><p><a href="{% url 'logout' %}">退出登录</a></p></div>
+      <div id="more"><a href="/user/member/{{ user_id }}">查看更多</a></div>
     </div>
 </div>
 <div id="right">

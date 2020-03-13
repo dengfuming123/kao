@@ -88,12 +88,12 @@ def writepost(request):
     select_form = SelectCategory()
     get_value = request.POST.get('sel_value', '')
     if request.method == 'POST':
-        if title and slug and body and pic and get_value:
+        if title and body and pic and get_value:
             Post.objects.create(title=title, slug=slug, body=body, user_id=user_id, goods_pic=pic, category=get_value)
-            return redirect('/')
-        elif title and slug and body and get_value:
+            return redirect('index')
+        elif title and body and get_value:
             Post.objects.create(title=title, slug=slug, body=body, user_id=user_id, category=get_value)
-            return redirect('/')
+            return redirect('index')
         else:
             tips = '发帖失败'
     return render(request, 'submit.html', locals())

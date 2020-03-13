@@ -3,6 +3,10 @@ div.text_area{
 margin:2cm 11cm 3cm 2cm;
 
 }
+.box_img img{
+height: 350px;
+width: auto;
+}
 #text_area{
 width: 800px;
 height: 200px;
@@ -15,6 +19,11 @@ margin-top: 2cm;
 margin-left:2cm ;
 list-style-type:none;
 
+}
+div.comment_area p{
+
+width:800px;
+word-wrap: break-word;
 }
 h3.comment_area_title{
 padding-bottom: 0.4em;
@@ -37,11 +46,10 @@ margin-right: 8.35cm;
 
 }
 div.footer{
-margin:2cm;
+margin-left:2cm;
 margin-top:20px;
 }
 div.all{
 background-color:#F5F5F5;
-padding-top:0;
 
 }

@@ -25,13 +25,14 @@
 {% endif %}
 </div>
 </div>
-<hr>
+<br>
+
 <div class="all">
 <div class="text_area">
 <h1 id="text_title">{{ post.title }}</h1>
 <hr>
 <textarea id="text_area" readonly>{{ post.body }}</textarea>
-<li id="src"><img src="{{ post.goods_pic.url }}" height="350" /></li>
+<div class="box_img"><img src="{{ post.goods_pic.url }}"></div>
 </div>
 <div class="comment_area">
     <h3 class="comment_area_title">提交评论</h3>
@@ -55,12 +56,12 @@
     <h3 class="comment_area_title">评论列表</h3>
     {% for commit in commits %}
     <p>{{commit.user}}: {{ commit.body }}</p>
-    <li ><img src="{{ commit.goods_pic.url }}" height="350" /></li>
+    <div class="box_img"><img src="{{ commit.goods_pic.url }}"></div>
     <span id="pub_data">{{commit.pub_date}}</span>
     <hr id="data_xian">
     {% endfor %}
 </div>
-<hr>
+<br>
 <div class="footer">
 <p>作者：{{ post.user }}</p>
 <p>文章序号：{{post.id}}</p>

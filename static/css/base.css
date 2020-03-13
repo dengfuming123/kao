@@ -6,20 +6,17 @@
          div.nav{
              float:left;
              width:70%;
-
+             display: inline-block;
+            height:75px;
          }
-         div.nav li{
-        font-size:25px;
-       font-family: "Microsoft soft";
-        margin-left:2cm;
-        font-weight:100;
-        display: inline-block;
 
-}
          div.nav a{
+             position:absolute;
              text-decoration: none;
-
              font-size: 22px;
+             height:75px;
+             line-height:75px;
+              margin-left:2cm;
          }
          div.nav a:hover{
              color: black;
@@ -30,10 +27,8 @@
 
          }
          #p1{
-             height:30px;
-             position: relative;
-             top: 5%;
-             left:50%;
+             height:100%;
+             margin-left:2cm;
          }
          #xian{
          width:143%;
@@ -42,35 +37,50 @@
          #xuanfu{
 position:absolute;
 right:30%;
+padding:0;
+margin:0;
+
+text-align: center;
+margin-top:-10px;
 }
 #right{
 margin-left:50px;
 }
 #head{
-width: 20px;
-height: 20px;
+width: 40x;
+height: 40px;
+border-radius: 26px;
+margin:0;
+padding:0;
 }
 #appear{
 position: absolute;
 width: 180px;
-height:180px;
+height:auto;
 border: 1px solid #ccc;
-text-align: left;
-
 }
 #username{
-position: absolute;
+position: relative;
 margin-top:10px;
 margin-left: 0;
+word-wrap: break-word;
 
+text-align: left;
 }
 #logout{
-position: absolute;
-margin-top:40px;
+position: relative;
+margin-top:10px;
 margin-left:0;
 
+text-align: left;
 }
+#more{
+position:relative;
 
+width:180px;
+background-color:#F5F5F5;
+text-align: center;
+}
 div.login{
   float:left;
   margin-bottom:54px;
