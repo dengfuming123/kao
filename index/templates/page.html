@@ -5,6 +5,7 @@
 {% block content %}
 <link rel="stylesheet" href="/static/css/login.css">
 <script type="text/javascript" src="/static/javascript/time.js"></script>
+
 <div class="login">
 {% if username %}
 <div id="xuanfu">
@@ -49,20 +50,42 @@
     </p>
 </div>
 {% endfor %}
+
 </div>
+
 <hr class="hr0">
 <div class="page">
-
-<p>
-    <a id="countpage">总页数:{{ numberpage }}</a>
+     {% if category %}
+     <a href="/{{ category }}/1">首页</a>
+     <a href="/{{ category }}/{{ last_page }}">上一页</a>
+     {% else %}
+     <a href="/page/1">首页</a>
+     <a href="/page/{{ last_page }}">上一页</a>
+     {% endif %}
+<!--     <a>{{n}}</a>-->
     {% for i in list_num %}
-    <a href="/page/{{ i }}">{{ i }}</a>
+     {% if i == current_page %}
+     <a class="active">{{ i }}</a>
+     {% else %}
+      {% if category %}
+     <a href="/{{ category }}/{{ i }}">{{ i }}</a>
+      {% else %}
+     <a href="/page/{{ i }}">{{ i }}</a>
+      {% endif %}
+     {% endif %}
     {% endfor %}
-</p>
+
+     {% if category %}
+     <a href="/{{ category }}/{{ next_page }}">下一页</a>
+     <a href="/{{ category }}/{{ numberpage }}">尾页</a>
+     {% else %}
+     <a href="/page/{{ next_page }}">下一页</a>
+     <a href="/page/{{ numberpage }}">尾页</a>
+     {% endif %}
+
+    <a id="countpage" hidden>{{numberpage}}</a>
 </div>
 <div class="submit">
-    <a>  第{{ n }}页</a>
-
 {% if is_superuser %}
 <li><a href="/admin">管理</a></li>
 {% endif %}

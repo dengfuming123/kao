@@ -57,7 +57,7 @@ padding:0;
 position: absolute;
 width: 180px;
 height:auto;
-border: 1px solid #ccc;
+border: 0;
 }
 #username{
 position: relative;
@@ -76,7 +76,8 @@ text-align: left;
 }
 #more{
 position:relative;
-
+height:30px;
+line-height:30px;
 width:180px;
 background-color:#F5F5F5;
 text-align: center;

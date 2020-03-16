@@ -6,3 +6,4 @@ var div1 = document.getElementById("times");
 div1.innerHTML = date1;
  }
 setInterval("getDate()",100);
+$(function()

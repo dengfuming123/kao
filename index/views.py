@@ -32,13 +32,21 @@ def index(request):
   return render(request, 'index.html', locals())
 def pagechange(request, n):
     username = request.user.username
-    maxs = int(n) #转化为 int类型
-    posts_a = Post.objects.all()[10*(maxs-1):10*maxs]   #每一页是哪几条
+    current_page = int(n) #转化为 int类型
+    posts_a = Post.objects.all()[10*(current_page-1):10*current_page]   #每一页是哪几条
     for co in posts_a:
         comment = Commit.objects.filter(post_id=co.id).aggregate(Count('id')) #计算评论数量
         Post.objects.filter(id=co.id).update(comment_number=comment['id__count'])
     post_count = Post.objects.aggregate(Count('id'))  #计算一共有多少篇文章
     numberpage = math.ceil(post_count['id__count']/10) #计算有多少页
+    if current_page > 1:    #大于一页 前一页为-1
+        last_page = current_page - 1
+    else:
+        last_page = 1
+    if current_page < numberpage:
+        next_page = current_page + 1
+    else:
+        next_page = numberpage
     countpage = numberpage+1
     list_num = []
     now = datetime.now
@@ -49,7 +57,35 @@ def pagechange(request, n):
         superuser = 1
     else:
         superuser = None
-    for i in range(1, countpage):
+    #当页码总数量大于10：
+    #目前页码小于等于5起始页码为1，结束页码为10；
+    #目前页码大于5并且小于等于最大页码-9，起始页码为目前页码-4，结束页码为+5；
+    #目前页码大于最大页码-9，起始页码为最大页码-9，结束页码为总共页码即countpage;
+    #当页码数量小于10：
+    #起始位1，结束页码为总页码数
+    #tab键整体后移
+    if numberpage > 10:
+        if current_page <= 5:
+            start_page = 1
+            end_page = 10
+            # print('a')
+        elif (current_page <= countpage-9) & (current_page > 5):
+            start_page = current_page-4
+            end_page = current_page+5
+            # print('b')
+        elif current_page > countpage-9:
+            start_page = countpage - 9
+            end_page = countpage - 1
+            # print('c')
+    else:
+        start_page = 1
+        end_page = countpage-1
+    # print(countpage)
+    # print(start_page)
+    # print(end_page)
+    # for add in range(100):
+    #     Post.objects.create(title=add, slug=add, body=add, user_id=user_id, category='其它')
+    for i in range(start_page, end_page+1):
         list_num.append(i)
     return render(request, 'page.html', locals())
 def showpost(request,id):

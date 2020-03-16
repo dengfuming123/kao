@@ -136,7 +136,9 @@ color: black;
 div.contexts a:hover{
 color:#1E90FF;
 }
-
+div.submit{
+float:right;
+}
 div.submit li{
  list-style:none;
 }
@@ -163,16 +165,32 @@ div.index a:hover{
 color:#1E90FF;
 }
 div.page{
-float:right;
-padding-right:50px;
+float:left;
+
 
 }
-div.page a{
-text-decoration: none;
+div.page a
+ {color:black;
+ text-decoration: none;
+ padding: 8px 16px;
+ border-radius: 5px;
+ transition: background-color .3s;
+ border: 1px solid #ddd; /* Gray */
+ font-size: 15px;
+ }
+ div.page a.active{
+     background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+ }
+div.page a:hover:not(.active){
+ background-color: #ddd;
 }
-#countpage{
-padding-right:20px;
+
+#times{
+float:right;
 }
+
 div.submittips{
 position:fixed;
 left: 50%;

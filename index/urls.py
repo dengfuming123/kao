@@ -3,7 +3,7 @@ from index.views import index, showpost, writepost, recordpost, pagechange
 from django.urls import path, include
 urlpatterns = [
  path('', index, name='index'),
- re_path(r'^page/(?P<n>[a-zA-Z0-9]{1})/$', pagechange),
+ path('page/<n>/', pagechange),
  path('post/<id>/', showpost),
  path('submit.html', writepost),
  path('record/<user_id>/', recordpost),
