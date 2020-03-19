@@ -5,6 +5,10 @@ div.all{
 hr.hr0{
 
 }
+html, body {
+margin:0;
+padding:0;
+}
 div.navs{
 background-color:white;
  list-style:none;
@@ -150,27 +154,102 @@ div.submit a:hover{
  color: black;
 }
 
+#border_up{
+background-color:black;
+width:100%;
+height:1px;
+margin-bottom:0px;
+}
+div.whole{
+overflow:hidden;
+position:absolute;
 
+height:100%;
+width:100%;
+}
 div.index{
-position: absolute;
-top: 50%;
-left: 50%;
+background-color:white;
+width:100%;
+height:50%;
+float:left;
+
+
+
+}
+div.r_index{
+float:left;
+width:100%;
+height:50%;
+background-color:black;
+
+}
+div.r_index a{
+position:relative;
 font-size:200%;
-}
-div.index a{
-color: LightSalmon;
+color: #000;
 text-decoration: none;
+float:right;
+margin-top:5%;
+margin-right:5%;
+letter-spacing:2px;
+animation:animate 2s ;
+ animation-fill-mode: forwards;
 }
-div.index a:hover{
-color:#1E90FF;
+@keyframes animate
+{
+  0%,100%
+  {
+   color:#fff;
+   filter:blur(0.5px);
+   text-shadow;0 0 10px #00b3ff;
+  }
+  25%,75%
+  {
+   color:#000;
+   filter:blur(0px);
+   text-shadow:0 0 10px #00b3ff;
+  }
 }
+@keyframes animator
+{
+  0%,100%
+  {
+   color:#000;
+   filter:blur(0.5px);
+   text-shadow;0 0 10px #00b3ff;
+  }
+  25%,75%
+  {
+   color:#fff;
+   filter:blur(0px);
+   text-shadow:0 0 10px #00b3ff;
+  }
+}
+
+
+
+div.index a{
+margin-top:5%;
+margin-left:5%;
+font-size:200%;
+color: black;
+text-decoration: none;
+float:left;
+letter-spacing:2px;
+animation:animator 2s ;
+animation-fill-mode: forwards;
+
+
+}
+
+
 div.page{
 float:left;
 
 
 }
-div.page a
- {color:black;
+div.page a{
+ color:black;
  text-decoration: none;
  padding: 8px 16px;
  border-radius: 5px;

@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('index.urls')),
     path('user/', include('users.urls')),
+    path('show/', include('Pye.urls')),
     url(r'^favicon\.ico$', RedirectView.as_view(url=r'static/img/favicon.ico')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
