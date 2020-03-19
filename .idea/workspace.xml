@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fde9b63a-ccdf-4ab6-8db2-1bdca29a952a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Pye/templates/pycharts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pye/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kao/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/kao/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/kao/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -93,9 +87,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-77" />
-    <option name="y" value="31" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-179" />
+    <option name="y" value="93" />
     <option name="width" value="1378" />
     <option name="height" value="704" />
   </component>
@@ -104,6 +98,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,7 +126,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,7 +176,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-77" y="31" width="1378" height="704" extended-state="0" />
+    <frame x="46" y="16" width="1378" height="704" extended-state="1" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25074628" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -580,7 +574,7 @@
     <entry file="file://$PROJECT_DIR$/kao/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
         </state>
       </provider>
     </entry>
