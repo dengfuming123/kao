@@ -30,8 +30,9 @@ def pagetegy(request, n):
     countpage = numberpage+1
     list_num = []
     now = datetime.now
-    user_id = request.user.id
-    user_profile = UserProfile.objects.get(user_id=user_id)  # 扩展后的user 需要用到其头像
+    if request.user.id:
+        user_id = request.user.id
+        user_profile = UserProfile.objects.get(user_id=user_id)  # 扩展后的user 需要用到其头像
     if username == 'qq792074582':
         superuser = 1
     else:
