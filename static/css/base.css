@@ -9,15 +9,18 @@
              display: inline-block;
             height:75px;
             margin-bottom:54px;
+
          }
 
          div.nav a{
-             position:absolute;
+
              text-decoration: none;
              font-size: 22px;
              height:75px;
              line-height:75px;
-              margin-left:2cm;
+
+             float:left;
+
          }
          div.nav a:hover{
              color: black;
@@ -27,9 +30,11 @@
              font-size: 120%
 
          }
-         #p1{
-             height:100%;
+         div.nav img{
+             height:40px;
              margin-left:2cm;
+
+             margin-top:17.5px;
          }
          #xian{
          width:143%;
@@ -58,7 +63,8 @@ padding:0;
 position: absolute;
 width: 180px;
 height:auto;
-border: 0;
+border: 1px solid #F5F5F5;
+
 }
 #username{
 position: relative;
